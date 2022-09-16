@@ -1,3 +1,3 @@
 # Edem-2022
-Javier Conejero /n
+Javier Conejero 
 Clase de Git
