@@ -7,3 +7,5 @@ def reto17():
   print(tupla[2::2])
   print(tupla[::4])
   print(tupla[9::-1])
+
+reto17()

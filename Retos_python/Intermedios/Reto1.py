@@ -2,48 +2,48 @@ from datetime import date
 
 
 def reto1():
-    lista = []
-    disc1 = {
-        "nombre": "Un verano sin ti",
-        "artista": "Bad Bunny",
-        "año": 2022,
-        "precio": 15,
-        "genero": "Reggaeton"
-    }
+    discos = {
 
-    disc2 = {
-        "nombre": "Motomami",
-        "artista": "Rosalía",
-        "año": 2022,
-        "precio": 18,
-        "genero": "Pop"
-    }
+        'disc1' :{      
+            "nombre": "Un verano sin ti",
+            "artista": "Bad Bunny",
+            "año": 2022,
+            "precio": 15,
+            "genero": "Reggaeton"
+        },
 
-    disc3 = {
-        "nombre": "Hollywood's Bleeding",
-        "artista": "Post Malone",
-        "año": 2019,
-        "precio": 13,
-        "genero": "Pop"
-    }
+        'disc2' :{
+            "nombre": "Motomami",
+            "artista": "Rosalía",
+            "año": 2022,
+            "precio": 18,
+            "genero": "Pop"
+        },
 
-    disc4 = {
-        "nombre": "Dig your own hole",
-        "artista": "The Chemical Brothers",
-        "año": 1997,
-        "precio": 13,
-        "genero": "Electro"
-    }
+        'disc3' : {
+            "nombre": "Hollywood's Bleeding",
+            "artista": "Post Malone",
+            "año": 2019,
+            "precio": 13,
+            "genero": "Pop"
+        },
 
-    disc5 = {
-        "nombre": "At the heart of winter",
-        "artista": "Immortal",
-        "año": 1999,
-        "precio": 15,
-        "genero": "Black metal"
+        'disc4' : {
+            "nombre": "Dig your own hole",
+            "artista": "The Chemical Brothers",
+            "año": 1997,
+            "precio": 13,
+            "genero": "Electro"
+        },
+
+        'disc5' : {
+            "nombre": "At the heart of winter",
+            "artista": "Immortal",
+            "año": 1999,
+            "precio": 15,
+            "genero": "Black metal"
+        }
     }
-    lista = [disc1, disc2, disc3, disc4, disc5]
-    lista1 = []
     number = int(
         input(
             "¿Qué disco le gustaria comprar?\nElige: 1, si quiere ver los discos disponibles\nElige: 0, si quiere salir\n"
@@ -54,50 +54,52 @@ def reto1():
         exit()
     else:
         print("\nDiscos disponibles, elige el número del que quieras:\n")
-        j = 0
-        for n in lista:
-            j += 1
-            for k, v in n.items():
-                if k == "nombre":
-                    print(j, v)
-                    lista1.append(v)
-        
-      
-        numero = int(input())
+        for i, disco in discos.items():  
+            nombredisco = i
+            nombre = disco['nombre']
+            artista = disco['artista']
+            anio = disco['año']
+            precio = disco['precio']
+            genero = disco['genero']
 
-        if numero == 0:
-          for n in lista:
-            j += 1
-            for k, v in n.items():
-                if k == "nombre":
-                    print(j, v)
-        elif numero == 1:
-              dic = disc1["nombre"]
-              print(
-                  "Este álbum tiene un precio de 15 euros.\nPulsa la tecla cero para el ticket."
-              )
-        elif numero == 2:
-              dic = disc2["nombre"]
-              print(
-                  "Este álbum tiene un precio de 18 euros.\nPulsa la tecla cero para el ticket."
-              )
-        elif numero == 3:
-              dic = disc3["nombre"]
-              print(
-                  "Este álbum tiene un precio de 13 euros.\nPulsa la tecla cero para el ticket."
-              )
-        elif numero == 4:
-              dic = disc4["nombre"]
-              print(
-                  "Este álbum tiene un precio de 9,1 euros, ya que esta rebajado.\nPulsa la tecla cero para el ticket."
-              )
-        elif numero == 5:
-              dic = disc5["nombre"]
-              print(
-                  "Este álbum tiene un precio de 10,5 euros, ya que esta rebajado.\nPulsa la tecla cero para el ticket."
-              )
-        numero1 = int(input())
-        if numero1 == 0:
-            print(f"Gracias por su compra. Su disco nuevo es {dic}")
-            dia = date.today()
-            print(f"Fecha de compra: {dia}")
+            print(f"Disco: {nombredisco}\nNombre: {nombre} \naAtista: {artista} \nAño: {anio} \nPrecio: {precio}\nGénero: {genero}\n\n")
+
+        elegirDisco = input("Elige el disco que desee:\n ") 
+
+        if elegirDisco == 'disc1':
+            print(f'Ha elegido el disco {elegirDisco}.')
+            nombre = discos['disc1'].get('nombre')
+            artista = discos['disc1'].get('artista')
+            precio = discos['disc1'].get('precio') 
+            fecha = date.today()
+            print(f"\nTicket de la compra\nDisco: {nombre}\nArtista: {artista}\nFecha de compra: {fecha}\nPrecio: {precio}€")
+        elif elegirDisco == 'disc2':
+            print(f'Ha elegido el disco {elegirDisco}.')
+            nombre = discos['disc2'].get('nombre')
+            artista = discos['disc2'].get('artista')
+            precio = discos['disc2'].get('precio') 
+            fecha = date.today()
+            print(f"\nTicket de la compra\nDisco: {nombre}\nArtista: {artista}\nFecha de compra: {fecha}\nPrecio: {precio}€")
+        elif elegirDisco == 'disc3':
+            print(f'Ha elegido el disco {elegirDisco}.')
+            nombre = discos['disc3'].get('nombre')
+            artista = discos['disc3'].get('artista')
+            precio = discos['disc3'].get('precio') 
+            fecha = date.today()
+            print(f"\nTicket de la compra\nDisco: {nombre}\nArtista: {artista}\nFecha de compra: {fecha}\nPrecio: {precio}€")
+        elif elegirDisco == 'disc4':
+            print(f'Ha elegido el disco {elegirDisco}.')
+            nombre = discos['disc4'].get('nombre')
+            artista = discos['disc4'].get('artista')
+            precio = discos['disc4'].get('precio') * 0,75
+            fecha = date.today()
+            print(f"\nTicket de la compra\nDisco: {nombre}\nArtista: {artista}\nFecha de compra: {fecha}\nPrecio: {precio}€\nCon este disco te has ahorrado un 30%")
+        elif elegirDisco == 'disc5':
+            print(f'Ha elegido el disco {elegirDisco}.')
+            nombre = discos['disc5'].get('nombre')
+            artista = discos['disc5'].get('artista')
+            precio = discos['disc5'].get('precio') *0.75
+            fecha = date.today()
+            print(f"\nTicket de la compra\nDisco: {nombre}\nArtista: {artista}\nFecha de compra: {fecha}\nPrecio: {precio}€\nCon este disco te has ahorrado un 30%")
+        
+reto1()
